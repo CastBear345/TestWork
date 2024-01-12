@@ -6,14 +6,21 @@ class Program
 {
     static void Main()
     {
-        Nebelung nebelungCat = new Nebelung();
+        var book1 = new Book();
+        book1.Id = 1;
+        book1.Title = "Прикючения Марка";
+        book1.Price = 100;
 
-        Koshka<Nebelung> myCat = new Koshka<Nebelung>(nebelungCat);
+        var book2 = new Book();
+        book2.Id = 2;
+        book2.Title = "Прикючения Марка II";
+        book2.Price = 100;
 
-        Console.WriteLine($"Cat breed: {myCat.Poroda.GetType().Name}");
-        Console.WriteLine($"Fur length: {myCat.Poroda.Length}");
-        Console.WriteLine($"Fur color: {myCat.Poroda.Color}");
-        Console.WriteLine($"Average weight: {myCat.Poroda.AverageWeight} kg");
-        Console.WriteLine($"Price: ${myCat.Poroda.Price}");
+        var bookList = new List<Book>() { book1, book2};
+
+        foreach (var book in bookList)
+        {
+            Console.WriteLine(book.Title);
+        }
     }
 }
